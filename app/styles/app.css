@@ -1,7 +1,6 @@
 .schedule {
-    display: flex;
-    flex-direction: column;
     height: 100vh;
+    width: 100%;
 }
 
 .schedule .day-nav {
@@ -13,26 +12,35 @@
     position: fixed;
     z-index: 100;
     left: 0;
-    right: 0;
+}
+
+.schedule .body-container {
+    padding-top: 3.3em;
+    overflow: visible;
+}
+
+.schedule .body-container.liquid-animating {
+    overflow-x: hidden;
 }
 
 @media screen and (min-width: 40.0625em) {
+    .schedule .body-container {
+        padding-top: 3.75em;
+    }
+
     .schedule .day-nav {
         height: 3.75em;
     }
 }
 
 @media screen and (min-width: 64.0625em) {
+    .schedule .body-container {
+        padding-top: 4.5em;
+    }
+
     .schedule .day-nav {
         height: 4.5em;
     }
-}
-
-.schedule .body-container {
-    margin-top: 4.5em;
-    /* Allow for normal vertical page scrolling, but let side-to-side animations behave correctly */
-    overflow: visible;
-    overflow-x: hidden;
 }
 
 .schedule > .liquid-container > .liquid-child {
